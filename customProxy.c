@@ -312,7 +312,9 @@ int main(int argc, char ** argv){
 
 	start_redis_server();
 	start_mysql_server();
-	
+	printf("Setting up servers...\n");
+	sleep(10);
+	printf("Ready to go.\n");
 	fp = fopen(argv[1], "r");
 
        if (fp == NULL){
@@ -320,7 +322,12 @@ int main(int argc, char ** argv){
        }
 
        while ((read = getline(&line, &len, fp)) != -1) {
+       		int len = strlen(line);
+       		if(len>0 && line[len-1] == '\n')
+       			line[len-1] = 0;
+
            execute_command(line);
+       		//printf("%s",line );
        }
        fclose(fp);
        

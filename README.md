@@ -1,4 +1,4 @@
-Functioning
+##Functioning
 	Following redis commands are implemented successfully with mysql as backend server for persistent storage.
 	1. GET key
 	2. SET key value
@@ -7,7 +7,7 @@ Functioning
 	where
 		key and value are string and ttl is time in seconds.
 
-Files
+##Files
 	1. customProxy.h
 		- header file for all functions
 
@@ -20,7 +20,7 @@ Files
 		- If you want to change redis server or mysql server then just change the variable values in this file located at top in customProxy.c.
 
 
-Compiling
+##Compiling
 	gcc -o customProxy customProxy.c parse_commands.c libhiredis.a -std=c99  `mysql_config --cflags --libs` -Wall
 
 

@@ -24,6 +24,6 @@
 	gcc -o customProxy customProxy.c parse_commands.c libhiredis.a -std=c99  `mysql_config --cflags --libs` -Wall
 
 
-Running
+##Running
 	./customProxy <command_file_name>
 
